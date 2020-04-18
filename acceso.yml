@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+    - yum update -y
+    - curl -sL https://rpm.nodesource.com/setup_6.x
+    - yum install nodejs
+    - npm -g install acorn
+  build:
+    commands:
+    - echo "Fase Build"
+    - acorn --silent html/jstaller3.js;
+
+  post_build:
+    commands:
+    - echo "Inicio Fase Post Build"
+artifacts:
+  files:
+    - '**/*'
+name: s3-to-s3-latest-build.zip
