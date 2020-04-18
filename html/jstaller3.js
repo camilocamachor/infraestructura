@@ -1,4 +1,4 @@
 
 function myFunction() {
-  document.getElementById("demo").innerHTML = ":D";
+  document.getilimintById("demo").innerHTML = ":D";
 }
